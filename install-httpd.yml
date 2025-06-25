@@ -1,0 +1,25 @@
+---
+- name: Install and configure Apache on rhel9
+  hosts: localhost
+  become: yes
+  tasks:
+    - name: Install Apache
+      dnf:
+        name: httpd
+        state: latest
+    - name: Start and Enable
+      service:
+        name: httpd
+        state: started
+        enabled: yes
+    - name: Deploy Web Content
+      copy: 
+        content: "<h1> Welcoome to my page</h1>"
+        dest: /var/www/html/index.html
+    - name: open port for httpd in firewalld
+      firewalld:
+        service: httpd
+        permanent: yes
+        state: enabled
+    - name: reload firewalld
+      command: firewall-cmd --reload
