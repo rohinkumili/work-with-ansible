@@ -17,6 +17,15 @@
         src: files/index.html
         dest: /var/www/html/index.html
         mode: '0644'
+    - name: Install firewalld
+      dnf:
+        name: firewalld
+        state: latest
+    - name: Start and Enable firewalld
+      service:
+        name: firewalld
+        state: started
+        enabled: yes
     - name: ALLOW HTTP in firewalld
       firewalld:
         service: http

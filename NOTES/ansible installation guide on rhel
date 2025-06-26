@@ -1,0 +1,24 @@
+To install Ansible using pip on RHEL 9, follow these steps:
+
+1. Install Python and pip:
+    Ensure Python 3 and pip are installed:
+        $ sudo dnf install python3 python3-pip -y
+
+2. Install Ansible:
+    Use pip to install Ansible:
+        $ sudo pip3 install ansible --user 
+        $ sudo pip3 install ansible
+
+3. Verify the Installation:
+    Check the installed Ansible version:
+        $ sudo ansible --version
+
+to uninstall Ansible installed via pip on RHEL 9, use the following command:
+    $sudo pip3 uninstall ansible
+
+Notes:
+
+1. Ensure your system has internet access to download packages.
+2. If you encounter permission issues, use sudo or adjust permissions accordingly.
+3. This method installs the latest Ansible version from PyPI, 
+   which may differ from the RHEL repository version.
