@@ -1,6 +1,6 @@
 ---
 - name: Deploy RHEL Web Server
-  hosts: webservers
+  hosts: localhost
   become: true
   tasks:
     - name: Install httpd
