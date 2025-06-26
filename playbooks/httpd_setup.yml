@@ -14,7 +14,7 @@
         enabled: yes
     - name: Deploy Web Content
       copy:
-        src: files/index.html
+        src: /home/ec2-user/files/index.html
         dest: /var/www/html/index.html
         mode: '0644'
     - name: Install firewalld
