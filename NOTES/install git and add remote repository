@@ -1,105 +1,106 @@
-To install Git on RHEL 9, you can use the following command:
-Open a terminal and run the following command:  $ sudo dnf install git -y
-
-
-check:
-$ git --version
-
-
-
-logs saved:
-[ec2-user@ip-10-0-15-93 ~]$ git init
-Initialized empty Git repository in /home/ec2-user/.git/
-
-[ec2-user@ip-10-0-15-93 ~]$ git status
-On branch master
-
-[ec2-user@ip-10-0-15-93 ~]$ sudo git branch -m main
-
-[ec2-user@ip-10-0-15-93 ~]$ git branch
-* main
-
-[ec2-user@ip-10-0-15-93 ~]$ git remote -v
-
-[ec2-user@ip-10-0-15-93 ~]$ git remote add origin https://github.com/rohinkumili/work-with-ansible.git
-
-[ec2-user@ip-10-0-15-93 ~]$ git remote -v
-origin  https://github.com/rohinkumili/work-with-ansible.git (fetch)
-origin  https://github.com/rohinkumili/work-with-ansible.git (push)
-
-[ec2-user@ip-10-0-15-93 ~]$ git pull
-remote: Enumerating objects: 74, done.
-remote: Counting objects: 100% (74/74), done.
-remote: Compressing objects: 100% (47/47), done.
-remote: Total 74 (delta 18), reused 62 (delta 11), pack-reused 0 (from 0)
-Unpacking objects: 100% (74/74), 11.72 KiB | 706.00 KiB/s, done.
-From https://github.com/rohinkumili/work-with-ansible
- * [new branch]      main       -> origin/main
- * [new branch]      master     -> origin/master
-There is no tracking information for the current branch.
-Please specify which branch you want to merge with.
-See git-pull(1) for details.
-
-    git pull <remote> <branch>
-
-If you wish to set tracking information for this branch you can do so with:
-
-    git branch --set-upstream-to=origin/<branch> main
-
-[ec2-user@ip-10-0-15-93 ~]$ git pull origin main
-From https://github.com/rohinkumili/work-with-ansible
- * branch            main       -> FETCH_HEAD
-
-[ec2-user@ip-10-0-15-93 ~]$ ls
-ansible_quickstart  files  inventory  playbooks  README.md
-
-[ec2-user@ip-10-0-15-93 ~]$ git config --global user.name "rohinkumili"
-[ec2-user@ip-10-0-15-93 ~]$ git config --global user.email "rohinkumili92@gmail.com"
-
-
-[ec2-user@ip-10-0-15-93 ~]$ git config --list
-user.name=rohinkumili
-user.email=rohinkumili92@gmail.com
-core.repositoryformatversion=0
-core.filemode=true
-core.bare=false
-core.logallrefupdates=true
-remote.origin.url=https://github.com/rohinkumili/work-with-ansible.git
-remote.origin.fetch=+refs/heads/*:refs/remotes/origin/*
-branch.main.remote=origin
-branch.main.merge=refs/heads/main
-
-[ec2-user@ip-10-0-15-93 ~]$ git branch --set-upstream-to=origin/main main
-branch 'main' set up to track 'origin/main'.
-[ec2-user@ip-10-0-15-93 ~]$
-[ec2-user@ip-10-0-15-93 ~]$
-[ec2-user@ip-10-0-15-93 ~]$ git pull
-Already up to date.
-
-
-[ec2-user@ip-10-0-15-93 ~]$ git push
-Username for 'https://github.com': rohinkumili
-Password for 'https://rohinkumili@github.com': <provide the github token, ex:ghp_1234567890abcdef1234567890abcdef12345678>
-Enumerating objects: 5, done.
-Counting objects: 100% (5/5), done.
-Compressing objects: 100% (3/3), done.
-Writing objects: 100% (4/4), 422 bytes | 422.00 KiB/s, done.
-Total 4 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
-remote: Resolving deltas: 100% (1/1), completed with 1 local object.
-To https://github.com/rohinkumili/work-with-ansible.git
-   0302be7..63d64e5  main -> main
-
-
-to create a new github token for authentication
- 1. Go to GitHub and log in to your account.
-    2. Click on your profile picture in the top right corner and select "Settings."
-    3. In the left sidebar, click on "Developer settings."
-    4. Click on "Personal access tokens" and then "Tokens (classic)."
-    5. Click on "Generate new token."
-    6. Give your token a descriptive name, set an expiration date, and select the scopes you need (e.g., `repo` for full control of private repositories).
-    7. Click "Generate token."
-    8. Copy the generated token and store it securely (you won't be able to see it again).
-    # Use this token as your password when prompted during Git operations.
-    # If you need to change the remote URL for your Git repository, you can use the following command:
-    git remote set-url origin
-        
+#    To install Git on RHEL 9, you can use the following command:
+#    Open a terminal and run the following command:  $ sudo dnf install git -y
+#    
+#    
+#    check:
+#    $ git --version
+#    
+#    
+#    
+#    logs saved:
+#    
+#    [ec2-user@ip-10-0-15-93 ~] $git init
+#    Initialized empty Git repository in /home/ec2-user/.git/
+#    [ec2-user@ip-10-0-15-93 ~]$ git status
+#    On branch master
+#    
+#    [ec2-user@ip-10-0-15-93 ~]$ sudo git branch -m main
+#    
+#    [ec2-user@ip-10-0-15-93 ~]$ git branch
+#    * main
+#    
+#    [ec2-user@ip-10-0-15-93 ~]$git remote -v
+#    
+#    [ec2-user@ip-10-0-15-93 ~]$git remote add origin https://github.com/rohinkumili/work-with-ansible.git
+#    
+#    [ec2-user@ip-10-0-15-93 ~]$git remote -v
+#    
+#    origin  https://github.com/rohinkumili/work-with-ansible.git (fetch)
+#    origin  https://github.com/rohinkumili/work-with-ansible.git (push)
+#    
+#    [ec2-user@ip-10-0-15-93 ~]$ git pull
+#    remote:Enumerating objects: 74, done.
+#    remote:Counting objects: 100% (74/74), done.
+#    remote:Compressing objects: 100% (47/47), done.
+#    remote:Total 74 (delta 18), reused 62 (delta 11), pack-reused 0 (from 0)
+#    Unpacking objects: 100% (74/74), 11.72 KiB | 706.00 KiB/s, done.
+#     From https://github.com/rohinkumili/work-with-ansible
+#     * [new branch]      main       -> origin/main
+#     * [new branch]      master     -> origin/master
+#     There is no tracking information for the current branch.
+#     Please specify which branch you want to merge with.
+#     See git-pull(1) for details.
+#    
+#        git pull <remote> <branch>
+#    
+#    If you wish to set tracking information for this branch you can do so with:
+#    
+#        git branch --set-upstream-to=origin/<branch> main
+#    
+#    [ec2-user@ip-10-0-15-93 ~]$git pull origin main
+#    From https://github.com/rohinkumili/work-with-ansible
+#     * branch            main       -> FETCH_HEAD
+#    
+#    [ec2-user@ip-10-0-15-93 ~]$ ls
+#    ansible_quickstart  files  inventory  playbooks  README.md
+#    
+#    [ec2-user@ip-10-0-15-93 ~]$ git config --global user.name "rohinkumili"
+#    [ec2-user@ip-10-0-15-93 ~]$ git config --global user.email "rohinkumili92@gmail.com"
+#    
+#    
+#    [ec2-user@ip-10-0-15-93 ~]$ git config --list
+#    user.name=rohinkumili
+#    user.email=rohinkumili92@gmail.com
+#    core.repositoryformatversion=0
+#    core.filemode=true
+#    core.bare=false
+#    core.logallrefupdates=true
+#    remote.origin.url=https://github.com/rohinkumili/work-with-ansible.git
+#    remote.origin.fetch=+refs/heads/*:refs/remotes/origin/*
+#    branch.main.remote=origin
+#    branch.main.merge=refs/heads/main
+#    
+#    [ec2-user@ip-10-0-15-93 ~]$ git branch --set-upstream-to=origin/main main
+#    branch 'main' set up to track 'origin/main'.
+#    [ec2-user@ip-10-0-15-93 ~]$
+#    [ec2-user@ip-10-0-15-93 ~]$
+#    [ec2-user@ip-10-0-15-93 ~]$ git pull
+#    Already up to date.
+#    
+#    
+#    [ec2-user@ip-10-0-15-93 ~]$ git push
+#    Username for 'https://github.com': rohinkumili
+#    Password for 'https://rohinkumili@github.com': <provide the github token, ex:ghp_1234567890abcdef1234567890abcdef12345678>
+#    Enumerating objects: 5, done.
+#    Counting objects: 100% (5/5), done.
+#    Compressing objects: 100% (3/3), done.
+#    Writing objects: 100% (4/4), 422 bytes | 422.00 KiB/s, done.
+#    Total 4 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+#    remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+#    To https://github.com/rohinkumili/work-with-ansible.git
+#       0302be7..63d64e5  main -> main
+#    
+#    
+#    to create a new github token for authentication
+#     1. Go to GitHub and log in to your account.
+#        2. Click on your profile picture in the top right corner and select "Settings."
+#        3. In the left sidebar, click on "Developer settings."
+#        4. Click on "Personal access tokens" and then "Tokens (classic)."
+#        5. Click on "Generate new token."
+#        6. Give your token a descriptive name, set an expiration date, and select the scopes you need (e.g., `repo` for full control of private repositories).
+#        7. Click "Generate token."
+#        8. Copy the generated token and store it securely (you won't be able to see it again).
+#        # Use this token as your password when prompted during Git operations.
+#        # If you need to change the remote URL for your Git repository, you can use the following command:
+#        git remote set-url origin
+#    
