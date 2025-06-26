@@ -1,0 +1,29 @@
+---
+- name: install nginx
+  hosts: localhost
+  become: yes
+  tasks:
+    - name: Install Nginx
+      dnf:
+        name: nginx
+        state: latest
+
+    - name: Start and Enable Nginx
+      service:
+        name: nginx
+        state: started
+        enabled: yes
+
+    - name: Deploy Web Content
+      copy:
+        content: "<h1> Welcome to my Nginx page</h1>"
+        dest: /usr/share/nginx/html/index.html
+
+    - name: Open port for Nginx in firewalld
+      firewalld:
+        service: nginx
+        permanent: yes
+        state: enabled
+
+    - name: Reload firewalld
+      command: firewall-cmd --reload
