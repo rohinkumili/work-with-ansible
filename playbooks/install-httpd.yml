@@ -1,7 +1,7 @@
 ---
 - name: Install and configure Apache on rhel9
   hosts: localhost
-  become: yes
+  become: true
   tasks:
     - name: Install Apache
       dnf:
