@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Static Blog</title>
+    <title>Rohin's Linux Admin Blog</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-100 font-sans">
     <!-- Header -->
-    <header class="bg-green-600 text-white p-4">
+    <header class="bg-red-600 text-white p-4">
         <div class="container mx-auto flex justify-between items-center">
-            <h1 class="text-3xl font-bold">My Static Blog</h1>
+            <h1 class="text-3xl font-bold">Rohin's Linux Admin Blog</h1>
             <nav>
                 <ul class="flex space-x-4">
                     <li><a href="#home" class="hover:underline">Home</a></li>
@@ -26,30 +26,40 @@
         <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <!-- Blog Post 1 with Image -->
             <article class="bg-white p-6 rounded-lg shadow-md">
-                <h2 class="text-2xl font-semibold mb-2">My First Adventure</h2>
+                <h2 class="text-2xl font-semibold mb-2">Optimizing Red Hat Servers</h2>
                 <p class="text-gray-500 text-sm mb-4">Posted on June 26, 2025</p>
-                <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e" alt="Beach Landscape" class="w-full h-48 object-cover rounded-md mb-4">
-                <p class="text-gray-700 mb-4">Exploring the serene beaches was an unforgettable experience. The sound of waves and the sunset were breathtaking.</p>
-                <a href="#" class="text-green-600 hover:underline">Read More</a>
+                <img src="https://images.unsplash.com/photo-1516321310765-79f90043b623" alt="Server Room" class="w-full h-48 object-cover rounded-md mb-4">
+                <p class="text-gray-700 mb-4">Tips for improving performance on Red Hat Enterprise Linux servers, including kernel tuning and resource management.</p>
+                <a href="#" class="text-red-600 hover:underline">Read More</a>
             </article>
-            <!-- Blog Post 2 with Image -->
+            <!-- Blog Post 2 with Code Snippet -->
             <article class="bg-white p-6 rounded-lg shadow-md">
-                <h2 class="text-2xl font-semibold mb-2">City Lights</h2>
+                <h2 class="text-2xl font-semibold mb-2">Automating Tasks with Ansible</h2>
                 <p class="text-gray-500 text-sm mb-4">Posted on June 25, 2025</p>
-                <img src="https://images.unsplash.com/photo-1516321310765-79f90043b623" alt="City Skyline" class="w-full h-48 object-cover rounded-md mb-4">
-                <p class="text-gray-700 mb-4">The vibrant energy of the city at night is something to behold. From skyscrapers to street food, it’s a must-visit!</p>
-                <a href="#" class="text-green-600 hover:underline">Read More</a>
+                <pre class="bg-gray-800 text-white p-4 rounded-md mb-4 overflow-x-auto"><code>---
+- name: Install and start httpd
+  hosts: webservers
+  become: yes
+  tasks:
+    - name: Install httpd
+      yum:
+        name: httpd
+        state: latest
+    - name: Start httpd service
+      service:
+        name: httpd
+        state: started
+        enabled: yes
+</code></pre>
+                <p class="text-gray-700 mb-4">A sample Ansible playbook to install and enable httpd on RHEL servers, showcasing automation skills.</p>
+                <a href="#" class="text-red-600 hover:underline">Read More</a>
             </article>
-            <!-- Blog Post 3 with Video -->
+            <!-- Blog Post 3 -->
             <article class="bg-white p-6 rounded-lg shadow-md">
-                <h2 class="text-2xl font-semibold mb-2">Nature in Motion</h2>
+                <h2 class="text-2xl font-semibold mb-2">Managing Ports in RHEL 8</h2>
                 <p class="text-gray-500 text-sm mb-4">Posted on June 24, 2025</p>
-                <video controls class="w-full h-48 object-cover rounded-md mb-4">
-                    <source src="https://archive.org/download/BigBuckBunny_124/Content/big_buck_bunny_720p_surround.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-                <p class="text-gray-700 mb-4">A short clip capturing the beauty of nature in motion. Watch the wildlife and landscapes come alive.</p>
-                <a href="#" class="text-green-600 hover:underline">Read More</a>
+                <p class="text-gray-700 mb-4">Learn how to check port status using tools like <code>ss</code> and <code>firewalld</code> to secure your Red Hat servers.</p>
+                <a href="#" class="text-red-600 hover:underline">Read More</a>
             </article>
         </section>
     </main>
@@ -57,10 +67,10 @@
     <!-- Footer -->
     <footer class="bg-gray-800 text-white p-4 mt-8">
         <div class="container mx-auto text-center">
-            <p>© 2025 My Static Blog. All rights reserved.</p>
+            <p>© 2025 Rohin's Linux Admin Blog. All rights reserved.</p>
             <div class="mt-2">
-                <a href="#contact" class="text-green-300 hover:underline mx-2">Contact</a>
-                <a href="#privacy" class="text-green-300 hover:underline mx-2">Privacy Policy</a>
+                <a href="#contact" class="text-red-300 hover:underline mx-2">Contact</a>
+                <a href="#privacy" class="text-red-300 hover:underline mx-2">Privacy Policy</a>
             </div>
         </div>
     </footer>
