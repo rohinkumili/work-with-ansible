@@ -13,5 +13,9 @@ Automates Apache (`httpd`) deployment on an RHEL EC2 instance using Ansible.
 - `playbooks/httpd_setup.yml`: Ansible playbook.
 - `files/index.html`: Webpage.
 
+- ##sample screenshot for successfull completion
+- ![image](https://github.com/user-attachments/assets/ed47211b-1390-434c-9698-91db99e2409c)
+
+
 ## Contact
 Rohin Kumili | [https://www.linkedin.com/in/rohin-kumar-kumili-8a636b167]
